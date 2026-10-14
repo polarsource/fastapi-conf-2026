@@ -1,0 +1,14 @@
+{
+  "name": "fastapi-conf-talk",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --port 3030",
+    "build": "slidev build",
+    "export": "slidev export --dark --with-clicks"
+  },
+  "devDependencies": {
+    "@slidev/cli": "53.0.0",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}

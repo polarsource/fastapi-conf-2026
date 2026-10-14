@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.slidev/
+previews/
+slides-export.pdf
+rehearsals/
