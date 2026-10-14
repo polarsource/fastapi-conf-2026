@@ -4,3 +4,4 @@ dist/
 previews/
 slides-export.pdf
 rehearsals/
+.DS_Store
