@@ -425,7 +425,11 @@ class: closing-slide
 <h1>Our release doesn’t have to<br><span>become their emergency.</span></h1>
 
 <!--
-We started with a field we wanted to rename. Now we can ship that change, keep the old contract available while it's supported, and help users migrate with their editor pointing out what needs updating.
+We started with a field we wanted to rename.
+
+Now we can ship that change, keep the old contract available while users need time to migrate, and help them find what needs updating directly in their editor.
+
+Our release doesn’t have to become their emergency.
 -->
 
 ---
@@ -443,5 +447,9 @@ class: ama-slide
 </div>
 
 <!--
-Questions and discussion. The GitHub reference contains the versioning implementation and SDK generator presented in this talk.
+Thank you.
+
+You’ll find the versioning code and the SDK generator in the Polar repository.
+
+I’m happy to take questions now, and you can also find me afterwards if you’d like to dig into the implementation.
 -->
