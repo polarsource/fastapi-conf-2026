@@ -147,13 +147,13 @@ class: principles-slide
 <ol class="principles">
 <li v-click><span class="principle-index">01</span>Declare changes<br><span>with minimal duplication</span></li>
 <li v-click><span class="principle-index">02</span>Accurate OpenAPI<br><span>for every version</span></li>
-<li v-click><span class="principle-index">03</span>Let users migrate<br><span>at their own pace</span></li>
+<li v-click><span class="principle-index">03</span>Great DX<br><span>including upgrades</span></li>
 </ol>
 
 <!--
 Here was our North Star. The key thing for us was that we wanted to maintain our pace of innovation, but still have a clear and stable contract for our users who rely on us for their billing.
 It meant we needed specific tooling, pushing the boundaries of FastAPI and Pydantic, so we could slightly tweak schemas or endpoints and serve several OpenAPI versions.
-And finally, given that we target quarterly releases, we wanted to give our users a way to keep track of the changes and migrate at their own pace, with type-safe SDKs that ship multiple versions.
+And finally, we wanted a great developer experience, including when users need to upgrade to a new API version. Given that we target quarterly releases, type-safe SDKs that ship multiple versions help users keep track of changes and guide their migration.
 -->
 
 ---
