@@ -12,6 +12,11 @@
   --slidev-code-line-height: 1.75;
   --slidev-code-background: transparent;
 }
+/* Avoid Safari rasterizing the enlarged slide at its unscaled resolution. */
+#slide-content {
+  transform: translate(-50%, -50%) !important;
+  zoom: var(--slidev-slide-scale);
+}
 .slidev-layout { background: var(--background-primary); color: var(--text-primary); padding: 48px 58px; font-family: 'PP Neue Montreal', sans-serif; font-weight: 400; }
 .slidev-layout h1 { margin: 0; font-size: 39px; line-height: 1.15; font-weight: 400; letter-spacing: -.02em; }
 .slidev-layout p { margin: 0; }
