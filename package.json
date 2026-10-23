@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "slidev --port 3030",
+    "showtime": "bash scripts/showtime.sh",
     "build": "slidev build",
     "export": "slidev export --dark --with-clicks"
   },

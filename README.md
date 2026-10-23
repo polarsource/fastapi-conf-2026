@@ -18,6 +18,44 @@ which can be removed at any time. Original source images stay at the project roo
 For a PDF backup, install Playwright (`npm install -D playwright-chromium`)
 and run `npm run export`; click steps become separate PDF pages.
 
+## Showtime (macOS + Safari)
+
+Connect an external monitor or projector in **extended display** mode, keep the
+laptop screen on, then run:
+
+```sh
+npm run showtime
+```
+
+This starts Slidev on port 3030, opens a new presenter window on the built-in
+screen, and activates Slidev's fullscreen mode on the first external
+display reported by macOS. The presenter window gets keyboard focus once setup
+finishes. Keep the terminal running; **Ctrl+C** stops the server. Stop any existing
+server on port 3030 first. Safari windows remain open after stopping the server.
+If automatic window setup fails, the launcher reports the error and keeps Slidev
+running so you can arrange the windows manually.
+
+Before the talk, do one rehearsal with the actual displays:
+
+- Allow your terminal app (Terminal, iTerm, or Codex) to control **Safari** and
+  **System Events** when macOS asks. In System Settings → Privacy & Security,
+  check **Automation** and enable **Accessibility** for that terminal app.
+- Enable **Displays have separate Spaces** in System Settings → Desktop & Dock →
+  Mission Control so the laptop stays usable while the projector is in full screen.
+  macOS may require a logout after changing this setting.
+
+For automatic Do Not Disturb, create a shortcut in Apple's **Shortcuts** app named
+**Showtime DND** with **Set Focus → Turn Do Not Disturb On → Until Turned Off**.
+The launcher runs it if present, using Apple's supported
+[Shortcuts CLI](https://support.apple.com/guide/shortcuts-mac/apd455c82f02/mac).
+Turn DND off yourself after the talk; stopping the server leaves it enabled.
+
+To check display detection without opening Safari:
+
+```sh
+osascript -l JavaScript scripts/showtime.js --check
+```
+
 ## Brand assets
 
 Fonts come from the local Polar repository. The Polar logotype comes from the supplied Polar Brand 2 assets.
