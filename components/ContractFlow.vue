@@ -14,8 +14,8 @@ defineProps<{ step: number }>()
     </g>
     <g :class="['flow-stage', { revealed: step >= 1 }]">
       <path d="M235 169H354Q374 169 374 149V91Q374 71 394 71H558 M235 169H354Q374 169 374 189V239Q374 259 394 259H558" class="flow-wire" />
-      <circle class="contract-packet" r="3" fill="white"><animateMotion dur="4s" repeatCount="indefinite" path="M235 169H354Q374 169 374 149V91Q374 71 394 71H558" /></circle>
-      <circle class="contract-packet" r="3" fill="white"><animateMotion dur="4s" begin="-2s" repeatCount="indefinite" path="M235 169H354Q374 169 374 189V239Q374 259 394 259H558" /></circle>
+      <circle class="contract-packet" r="3" fill="var(--text-primary)"><animateMotion dur="4s" repeatCount="indefinite" path="M235 169H354Q374 169 374 149V91Q374 71 394 71H558" /></circle>
+      <circle class="contract-packet" r="3" fill="var(--text-primary)"><animateMotion dur="4s" begin="-2s" repeatCount="indefinite" path="M235 169H354Q374 169 374 189V239Q374 259 394 259H558" /></circle>
       <g class="contract-doc">
         <path d="M570 12H824V124H570Z" class="layer-back" />
         <rect x="558" y="24" width="254" height="112" class="flow-surface" />
@@ -36,13 +36,13 @@ defineProps<{ step: number }>()
 
 <style scoped>
 .contract-flow { width: 100%; overflow: visible; }
-.flow-surface { fill: #111; stroke: #606060; }
-.layer-back { fill: #0b0b0b; stroke: #333; }
-.flow-wire { fill: none; stroke: #555; stroke-width: 1; }
-text { fill: #f0f0f0; font-family: 'PP Neue Montreal', sans-serif; }
-.micro { font: 11px GeistMono, monospace; fill: #999; letter-spacing: 1px; }
+.flow-surface { fill: var(--background-secondary); stroke: var(--text-secondary); }
+.layer-back { fill: var(--background-primary); stroke: light-dark(#d3d3d3, #333); }
+.flow-wire { fill: none; stroke: var(--text-secondary); stroke-width: 1; }
+text { fill: var(--text-primary); font-family: 'PP Neue Montreal', sans-serif; }
+.micro { font: 11px GeistMono, monospace; fill: var(--text-secondary); letter-spacing: 1px; }
 .flow-title { font-size: 31px; }.small { font: 22px GeistMono, monospace; }
-.flow-code { font: 13px GeistMono, monospace; fill: #bbb; }
+.flow-code { font: 13px GeistMono, monospace; fill: var(--text-secondary); }
 .flow-stage { opacity: 0; transform: translateX(-12px); transition: opacity 700ms, transform 1000ms cubic-bezier(.22,1,.36,1); }
 .flow-stage.revealed { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .contract-packet { animation: none; opacity: 0; }.flow-stage { transition: none; } }

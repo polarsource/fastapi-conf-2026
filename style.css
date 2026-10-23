@@ -1,17 +1,26 @@
 @font-face { font-family: 'PP Neue Montreal'; src: url('/fonts/PPNeueMontreal-VariableUpright.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: GeistMono; src: url('/fonts/GeistMono-Variable.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
 
-/* Polar landing: neutral surfaces, fine rules, restrained type, geometric motion. */
+/* Orbit semantic colors: https://orbit.polar.sh/foundations/colors */
 :root {
-  --background-primary: #090909;
-  --text-primary: #ededed;
-  --text-secondary: #919191;
-  --border-primary: #262626;
+  color-scheme: light dark;
+  --background-primary: light-dark(#fff, hsl(0 0% 3.5%));
+  --background-secondary: light-dark(oklch(0.985 0.002 247.839), hsl(0 0% 6.5%));
+  --background-inverse: light-dark(oklch(0.21 0.034 264.665), #fff);
+  --text-primary: light-dark(#000, #fff);
+  --text-secondary: light-dark(oklch(0.551 0.027 264.364), hsl(0 0% 52%));
+  --border-primary: light-dark(oklch(0.928 0.006 264.531), hsl(0 0% 13%));
   --ease-standard: cubic-bezier(.22,1,.36,1);
   --slidev-code-font-size: 18px;
   --slidev-code-line-height: 1.75;
   --slidev-code-background: transparent;
 }
+/* Follow Slidev's system preference and its optional appearance override. */
+html.light { color-scheme: light; }
+html.dark { color-scheme: dark; }
+html, body, #app { background: var(--background-primary); }
+html.light .brand { filter: invert(1); }
+
 /* Avoid Safari rasterizing the enlarged slide at its unscaled resolution. */
 #slide-content {
   transform: translate(-50%, -50%) !important;
@@ -29,7 +38,7 @@
 .title-slide .version { font-family: GeistMono, monospace; font-weight: 350; letter-spacing: -.07em; }
 .title-slide .subtitle { margin-top: 25px; font-size: 29px; color: var(--text-secondary); }
 .hero-orbit { position: absolute; right: 4px; top: 100px; width: 405px; height: 405px; }
-.conference { position: absolute; bottom: 47px; color: #999; font-size: 15px; }
+.conference { position: absolute; bottom: 47px; color: var(--text-secondary); font-size: 15px; }
 .intro-slide .bio { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .intro-slide h1 { font-size: 70px; }
 .intro-slide .role { margin-top: 24px; font-size: 26px; color: var(--text-secondary); }
@@ -37,32 +46,32 @@
 .portrait { position: absolute; right: 0; top: 0; width: 410px; height: 552px; object-fit: cover; object-position: center; mask-image: linear-gradient(to right,transparent,#000 18%); }
 
 .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; list-style: none !important; padding: 0 !important; margin: 110px 0 0 !important; }
-.principles li { border-top: 1px solid #555; padding-top: 24px; font-size: 27px; line-height: 1.35; margin: 0 !important; }
+.principles li { border-top: 1px solid var(--border-primary); padding-top: 24px; font-size: 27px; line-height: 1.35; margin: 0 !important; }
 .principles li > span:not(.principle-index) { color: var(--text-secondary); }
-.principle-index { display: block; font: 14px GeistMono, monospace; color: #888; margin-bottom: 44px; }
+.principle-index { display: block; font: 14px GeistMono, monospace; color: var(--text-secondary); margin-bottom: 44px; }
 
 .contract-scene { margin-top: 26px; }
 .contract-scene .contract-flow { height: 302px; }
 .sdk-slide h1 { font-size: 39px; }
 .diagram-slide .generator-scene { margin-top: 31px; }
 .packages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; --slidev-code-font-size: 20px; --slidev-code-line-height: 1.6; }
-.packages > div { display: grid; grid-template-rows: auto auto 120px; border-top: 1px solid #444; padding-top: 18px; }
+.packages > div { display: grid; grid-template-rows: auto auto 120px; border-top: 1px solid var(--border-primary); padding-top: 18px; }
 .packages pre { margin: 0 !important; }
-.package-language { color: #999; font-size: 20px; margin-bottom: 12px; }
+.package-language { color: var(--text-secondary); font-size: 20px; margin-bottom: 12px; }
 .package-name { font: 28px GeistMono, monospace; margin-bottom: 28px; }
-.package-content { align-self: start; min-width: 0; padding: 24px 16px; background: #111; }
+.package-content { align-self: start; min-width: 0; padding: 24px 16px; background: var(--background-secondary); }
 .package-import { --slidev-code-font-size: 12.5px; }
 
 .closing-slide { display: flex; align-items: center; }
 .closing-slide h1 { font-size: 54px; line-height: 1.14; letter-spacing: -.025em; }
-.closing-slide h1 span { color: #919191; }
+.closing-slide h1 span { color: var(--text-secondary); }
 .slidev-vclick-target { transition: opacity 700ms var(--ease-standard), transform 900ms var(--ease-standard); }
 .slidev-vclick-hidden { transform: translateY(8px); }
 .fade-enter-active, .fade-leave-active { transition: opacity 400ms ease !important; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 
-.hero-rule { position: absolute; bottom: 86px; left: 58px; width: 465px; height: 17px; background: repeating-linear-gradient(90deg,#555 0 1px,transparent 1px 14px); mask-image: linear-gradient(90deg,#000,transparent); }
+.hero-rule { position: absolute; bottom: 86px; left: 58px; width: 465px; height: 17px; background: repeating-linear-gradient(90deg,var(--border-primary) 0 1px,transparent 1px 14px); mask-image: linear-gradient(90deg,#000,transparent); }
 
 /* Center panels in the space below the heading; keep source text left aligned. */
 .slidev-layout.code-slide,
@@ -73,7 +82,7 @@
 .slidev-layout.code-slide > .code-example,
 .slidev-layout.request-slide > .slidev-code-wrapper,
 .slidev-layout.implementation-slide > .slidev-code-wrapper,
-.openapi-code { align-self: center; width: 100%; margin: 0 !important; padding: 26px; background: #111; border: 0; border-radius: 0; min-width: 0; text-align: left; }
+.openapi-code { align-self: center; width: 100%; margin: 0 !important; padding: 26px; background: var(--background-secondary); border: 0; border-radius: 0; min-width: 0; text-align: left; }
 .code-example > .slidev-code-wrapper,
 .openapi-code > .slidev-code-wrapper { margin: 0 !important; }
 .openapi-code { padding: 18px 26px; --slidev-code-font-size: 16px; --slidev-code-line-height: 1.3; }
@@ -92,8 +101,8 @@
 .ama-copy h1 { font-size: 72px; letter-spacing: -.035em; }
 .closing-links { display: flex; flex-direction: column; gap: 32px; margin-top: 54px; }
 .closing-links a { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; border: 0 !important; }
-.closing-links span { font-size: 19px; color: #919191; }
-.closing-links strong { font: 19px GeistMono, monospace; color: #ededed; }
+.closing-links span { font-size: 19px; color: var(--text-secondary); }
+.closing-links strong { font: 19px GeistMono, monospace; color: var(--text-primary); }
 
 /* Stagger the focus crops, keeping every edge inside the standard 58px gutter. */
 .stripe-collage { position: absolute; top: 130px; left: 58px; right: 58px; height: 370px; }
@@ -105,7 +114,7 @@
 .release-set { align-self: center; }
 .release-comparison { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; }
 .release-comparison + .release-comparison { margin-top: 20px; }
-.release-card { padding: 24px 32px; background: #111; }
-.release-card > span { display: block; font: 18px GeistMono, monospace; color: #999; margin-bottom: 16px; }
+.release-card { padding: 24px 32px; background: var(--background-secondary); }
+.release-card > span { display: block; font: 18px GeistMono, monospace; color: var(--text-secondary); margin-bottom: 16px; }
 .release-card > strong { font-size: 32px; font-weight: 400; letter-spacing: -.025em; }
-.release-arrow { text-align: center; font-size: 32px; color: #777; }
+.release-arrow { text-align: center; font-size: 32px; color: var(--text-secondary); }

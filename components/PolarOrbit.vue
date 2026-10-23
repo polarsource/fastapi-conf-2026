@@ -12,9 +12,9 @@
 </template>
 
 <style scoped>
-.polar-orbit { width: 100%; height: 100%; fill: none; stroke: #ededed; stroke-width: 1.25; }
+.polar-orbit { width: 100%; height: 100%; fill: none; stroke: var(--text-primary); stroke-width: 1.25; }
 .orbit-rotation { transform-origin: 200px 200px; animation: orbit 25s linear infinite; }
-.satellite { fill: #ededed; stroke: none; }
+.satellite { fill: var(--text-primary); stroke: none; }
 @keyframes orbit { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .orbit-rotation { animation: none; } }
 </style>

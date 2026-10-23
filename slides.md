@@ -3,7 +3,7 @@ theme: default
 title: "You don’t need /v2: API Versioning with FastAPI"
 author: François Voron
 info: FastAPI Conference talk, Amsterdam, October 28, 2026.
-colorSchema: dark
+colorSchema: auto
 aspectRatio: 16/9
 canvasWidth: 980
 transition: fade
