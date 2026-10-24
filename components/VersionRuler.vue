@@ -10,7 +10,8 @@ const versions = ['2026-07', '2026-10', '2027-01', '2027-04', '2027-07']
     <div class="ruler-crop">
       <div class="ruler-belt" :style="{ transform: `translateX(${-step * 288}px)` }">
         <div class="ruler-ticks" aria-hidden="true">
-          <i v-for="n in 121" :key="n" :class="{ major: (n - 1) % 6 === 0 }"></i>
+          <!-- Four approximate weeks per month; monthly ticks align with the centered version labels. -->
+          <i v-for="n in 61" :key="n" :class="{ major: (n - 1) % 4 === 2 }"></i>
         </div>
         <div class="ruler-dates">
           <span v-for="(version, i) in versions" :key="version" :class="{ selected: i === step + 1 }">{{ version }}</span>
@@ -27,7 +28,7 @@ const versions = ['2026-07', '2026-10', '2027-01', '2027-04', '2027-07']
 .ruler-crop { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); padding: 30px 0; }
 .ruler-belt { width: 1440px; transition: transform 1200ms cubic-bezier(.22,1,.36,1); }
 .ruler-ticks { display: flex; height: 42px; align-items: flex-start; }
-.ruler-ticks i { flex: 0 0 12px; height: 14px; border-left: 1px solid var(--border-primary); }
+.ruler-ticks i { flex: 0 0 24px; height: 14px; border-left: 1px solid var(--border-primary); }
 .ruler-ticks i.major { height: 27px; border-color: var(--text-secondary); }
 .ruler-dates { display: flex; margin-top: 16px; }
 .ruler-dates span { width: 288px; flex: 0 0 288px; text-align: center; font: 25px GeistMono, monospace; color: var(--text-secondary); transition: color 900ms; }
