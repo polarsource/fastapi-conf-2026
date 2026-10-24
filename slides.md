@@ -46,7 +46,7 @@ class: intro-slide
 
 <div class="bio">
   <h1>François<br>Voron</h1>
-  <p class="role">Engineering Lead</p>
+  <p class="role">Lead Engineer</p>
   <img class="brand" src="/polar.svg" alt="Polar" />
 </div>
 
