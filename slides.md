@@ -227,7 +227,7 @@ We can now declare a change once and serve the right response to each client. Ne
 
 ---
 class: implementation-slide openapi-slide
-clicks: 2
+clicks: 6
 ---
 
 # Serving several OpenAPI versions
@@ -238,7 +238,7 @@ clicks: 2
 
 <div v-else class="openapi-code">
 
-```py
+```py {*|1|15-16|4-9|11-13} {at: 3}
 app = FastAPI(openapi_url=None)
 
 def add_openapi_route(version):
