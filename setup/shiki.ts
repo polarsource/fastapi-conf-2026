@@ -1,6 +1,6 @@
 import { defineShikiSetup } from '@slidev/types'
-import githubLight from '@shikijs/themes/github-light'
-import vesper from '@shikijs/themes/vesper'
+import githubLight from '@shikijs/themes/github-light-high-contrast'
+import githubDark from '@shikijs/themes/github-dark-high-contrast'
 
 export default defineShikiSetup(() => ({
   themes: {
@@ -12,9 +12,9 @@ export default defineShikiSetup(() => ({
       ],
     },
     dark: {
-      ...vesper,
+      ...githubDark,
       tokenColors: [
-        ...vesper.tokenColors,
+        ...githubDark.tokenColors,
         // Python comments in this deck display the migration diagnostic.
         { scope: 'comment.line.number-sign.python', settings: { foreground: '#f38ba8' } },
       ],
