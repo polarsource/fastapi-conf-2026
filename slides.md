@@ -427,7 +427,7 @@ class: closing-slide
 <!--
 We started with a field we wanted to rename.
 
-Now we can ship that change, keep the old contract available while users need time to migrate, and help them find what needs updating directly in their editor.
+Now we can ship that change, document the contract, and provide users a fast and guided way to upgrade.
 
 Our release doesn’t have to become their emergency.
 -->
